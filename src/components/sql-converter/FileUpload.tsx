@@ -1,4 +1,3 @@
-
 import { Upload } from 'lucide-react';
 import { toast } from 'sonner';
 import { Card } from '@/components/ui/card';
@@ -23,9 +22,9 @@ export const FileUpload = ({ files, onFileChange, isAnimated }: FileUploadProps)
   };
 
   return (
-    <Card className={`p-6 border-border/40 shadow-lg hover:shadow-xl transition-all duration-500 ${isAnimated ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-8'}`}>
-      <h2 className="text-xl font-semibold mb-4 text-foreground">Upload Files</h2>
-      <div className="border-2 border-dashed border-border rounded-lg p-8 text-center hover:border-blue-500 transition-colors group">
+    <Card className={`p-6 border shadow-lg hover:shadow-xl transition-all duration-500 ${isAnimated ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-8'}`}>
+      <h2 className="text-xl font-semibold mb-4">Upload Files</h2>
+      <div className="border-2 border-dashed rounded-lg p-8 text-center hover:border-primary transition-colors group">
         <input
           type="file"
           accept=".sql,.txt"
@@ -50,10 +49,10 @@ export const FileUpload = ({ files, onFileChange, isAnimated }: FileUploadProps)
           <p className="text-sm text-muted-foreground">
             {files.length} file(s) selected
           </p>
-          <ul className="mt-2 text-sm max-h-[100px] overflow-auto border border-border/40 rounded-md p-2 bg-muted/20">
+          <ul className="mt-2 text-sm max-h-[100px] overflow-auto border rounded-md p-2 bg-muted">
             {files.map((file, index) => (
-              <li key={index} className="text-foreground py-1 px-2 odd:bg-muted/10 flex items-center">
-                <span className="w-4 h-4 inline-block rounded-full bg-blue-500/20 mr-2"></span>
+              <li key={index} className="py-1 px-2 odd:bg-muted flex items-center">
+                <span className="w-4 h-4 inline-block rounded-full bg-primary/20 mr-2"></span>
                 {file.name}
               </li>
             ))}
